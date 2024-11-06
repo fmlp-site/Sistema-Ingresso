@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login de Administrador</title>
+</head>
+<body>
+    <h1>Login de Administrador</h1>
+    <form id="formLogin">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        // JavaScript para enviar os dados para o RESTdb e realizar a autenticação
+        const form = document.getElementById('formLogin');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const senha = document.getElementById('senha').value;
+
+            // URL da sua API RESTdb para buscar o usuário
+            const url = `https://vestibularb-c6f2.restdb.io/rest/cadastrocandidato?max=2={"nome":"${nome}","senha":"${senha}"}`;
+
+            // Chamada para a API RESTdb usando o método fetch
+            fetch(url, {
+                headers: {
+                    'x-apikey': '67250fe49ea5b66833ab989b'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    // Login bem-sucedido
+                    console.log('Login realizado com sucesso:', data);
+                    // Redirecionar para a área restrita ou mostrar uma mensagem de sucesso
+                } else {
+                    // Login falhou
+                    console.error('Nome de usuário ou senha inválidos.');
+                    // Mostrar uma mensagem de erro ao usuário
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao realizar o login:', error);
+                // Mostrar uma mensagem de erro ao usuário
+            });
+        });
+    </script>
+</body>
+</html>
