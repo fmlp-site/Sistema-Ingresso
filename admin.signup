@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Administrador</title>
+</head>
+<body>
+    <h1>Cadastro de Administrador</h1>
+    <form id="formCadastro">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script>
+        // JavaScript para enviar os dados para o RESTdb
+        const form = document.getElementById('formCadastro');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const senha = document.getElementById('senha').value;
+
+            // URL da sua API RESTdb para criar um novo registro
+            const url = 'https://vestibularb-c6f2.restdb.io/rest/cadastrocandidato?max=2';
+
+            // Chamada para a API RESTdb usando o método fetch
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-apikey': '67250fe49ea5b66833ab989b'
+                },
+                body: JSON.stringify({
+                    nome: nome,
+                    senha: senha
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Cadastro realizado com sucesso:', data);
+                // Redirecionar para uma página de sucesso ou mostrar uma mensagem
+            })
+            .catch(error => {
+                console.error('Erro ao cadastrar:', error);
+                // Mostrar uma mensagem de erro ao usuário
+            });
+        });
+    </script>
+</body>
+</html>
