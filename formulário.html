@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Candidato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003f8c;
+        }
+        .success, .error {
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Candidato</h2>
+        <form id="cadastroForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+            <div id="mensagem" class="success" style="display: none;">Cadastrado com sucesso!</div>
+            <div id="erro" class="error" style="display: none;">Erro ao cadastrar. Tente novamente!</div>
+        </form>
+    </div>
+
+    <script>
+        // Substitua pelos valores da sua aplicação Backendless
+        const APP_ID = '22AF0CE2-C3D0-4CBD-8544-50826D808F56';
+        const REST_API_KEY = '61C085A9-8E89-4B00-9FEF-14B06A29DF75';
+        const URL = `https://api.backendless.com/${APP_ID}/${REST_API_KEY}/data/candidatos`;
+
+        // Função para enviar os dados para o Backendless
+        async function cadastrarCandidato(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            const dados = {
+                nome: nome,
+                email: email,
+                senha: senha
+            };
+
+            try {
+                const response = await fetch(URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dados)
+                });
+
+                if (response.ok) {
+                    document.getElementById('mensagem').style.display = 'block';
+                    document.getElementById('erro').style.display = 'none';
+                    document.getElementById('cadastroForm').reset();
+                } else {
+                    document.getElementById('mensagem').style.display = 'none';
+                    document.getElementById('erro').style.display = 'block';
+                }
+            } catch (error) {
+                document.getElementById('mensagem').style.display = 'none';
+                document.getElementById('erro').style.display = 'block';
+            }
+        }
+
+        document.getElementById('cadastroForm').addEventListener('submit', cadastrarCandidato);
+    </script>
+</body>
+</html>
