@@ -5,134 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vestibular 2024</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
         .header {
-            background-color: #62297b;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        .nav-bar {
-            background-color: black;
             display: flex;
-            justify-content: center;
-            padding: 10px 0;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #4e2a84;
+            padding: 15px;
         }
-        .nav-bar a {
-            color: white;
+
+        .logo {
+            height: 50px;
+        }
+
+        .menu a {
+            color: #fff;
+            margin: 0 10px;
             text-decoration: none;
-            margin: 0 15px;
-            padding: 8px 16px;
-            font-size: 14px;
         }
-        .nav-bar a:hover {
-            background-color: #444;
-        }
+
         .content {
-            max-width: 800px;
-            margin: 20px auto;
+            text-align: center;
             padding: 20px;
-            background-color: white;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            background-color: #eee;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            text-align: left;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .title {
-            color: #62297b;
-            font-size: 24px;
-            margin-bottom: 10px;
+
+        .info p {
+            font-size: 1em;
+            margin: 10px 0;
         }
-        .info-table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-        }
-        .info-table th, .info-table td {
-            padding: 8px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        .info-table th {
-            background-color: #f2f2f2;
-        }
+
         .buttons {
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
         }
-        .button {
-            background-color: #62297b;
-            color: white;
-            padding: 10px 15px;
-            text-align: center;
+
+        .buttons a {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4e2a84;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            flex: 1;
+            font-weight: bold;
         }
-        .button:hover {
-            background-color: #4e2166;
+
+        .download {
+            margin: 20px 0;
         }
+
+        .download a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .info-email {
+            margin-top: 30px;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
         .footer {
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
             background-color: #333;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>VESTIBULAR 2024</h1>
-    </div>
-    <div class="nav-bar">
-        <a href="#">Início</a>
-        <a href="#">Meu Cadastro</a>
-        <a href="#">Vestibular</a>
-        <a href="#">PSS</a>
-        <a href="#">Outros Concursos</a>
-        <a href="#">Documentos</a>
-        <a href="#">Serviços</a>
-        <a href="#">Protocolo Digital</a>
-    </div>
-    <div class="content">
-        <p class="title">Vestibular 2024 - Informações Importantes</p>
-        <table class="info-table">
-            <tr>
-                <th>Período de inscrição</th>
-                <td>01/09/2024 a 30/09/2024</td>
-            </tr>
-            <tr>
-                <th>Pagamento da taxa de inscrição</th>
-                <td>Até 07/10/2024</td>
-            </tr>
-            <tr>
-                <th>Taxa de inscrição</th>
-                <td>R$ 204,00 <br>*Cursos de Licenciatura são isentos de taxa de inscrição.</td>
-            </tr>
-            <tr>
-                <th>Divulgação do ensalamento</th>
-                <td>A partir de 08/11/2024</td>
-            </tr>
-            <tr>
-                <th>Divulgação dos resultados</th>
-                <td>Até 20/12/2024</td>
-            </tr>
-        </table>
-        <div class="buttons">
-            <a href="#" class="button">Minha Inscrição</a>
-            <a href="#" class="button">Concorrência</a>
-            <a href="#" class="button">Bancas Heteroidentificação/PCD</a>
+    <header class="header">
+        <img src="logo.png" alt="Logo UEPG" class="logo">
+        <div class="menu">
+            <a href="#">Início</a>
+            <a href="#">Meu Cadastro</a>
+            <a href="#">Vestibular</a>
+            <a href="#">PSS</a>
+            <a href="#">EAD</a>
+            <a href="#">Outros Concursos</a>
+            <a href="#">Documentos</a>
+            <a href="#">Serviços</a>
+            <a href="#">Protocolo Digital</a>
         </div>
-    </div>
-    <div class="footer">
-        ©2024 CPS | Designed by CPS
-    </div>
+    </header>
+    
+    <main class="content">
+        <h1>VESTIBULAR 2024</h1>
+        <section class="info">
+            <p><strong>Período de inscrição:</strong> 01/09/2024 a 30/09/2024</p>
+            <p><strong>Pagamento da taxa de inscrição:</strong> até 07/10/2024</p>
+            <p><strong>Taxa de inscrição:</strong> R$ 204,00</p>
+            <p>*Cursos de Licenciatura são isentos de taxa de inscrição.</p>
+            <p><strong>Divulgação do ensalamento:</strong> a partir de 08/11/2024</p>
+            <p><strong>Divulgação dos resultados (1ª chamada):</strong> até 20/12/2024</p>
+        </section>
+        
+        <div class="buttons">
+            <a href="#">Sobre o Vestibular</a>
+            <a href="#">Manual do Candidato</a>
+            <a href="#">Minha Inscrição</a>
+            <a href="#">Concorrência</a>
+            <a href="#">Bancas Heteroidentificação/PCD</a>
+            <a href="#">Informações sobre Matrícula</a>
+            <a href="#">Legislação</a>
+            <a href="#">Contato</a>
+        </div>
+        
+        <div class="download">
+            <a href="arquivo.pdf" download>Vestibular UEPG 2024 - Proporção Candidato/Vaga</a>
+        </div>
+        
+        <p class="info-email">DESEJA RECEBER INFORMAÇÕES POR EMAIL?</p>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy;2024 CPS | Designed by CPS</p>
+    </footer>
 </body>
 </html>
