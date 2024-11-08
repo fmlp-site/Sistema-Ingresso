@@ -1,104 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login e Cadastro - Administrador</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Acesso Administrativo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h1>Login e Cadastro - Administrador</h1>
-
-            <!-- Formulário de Login -->
-            <div class="form" id="login-form">
-                <h2>Login</h2>
-                <form id="login-form" method="POST">
-                    <input type="email" id="login-email" placeholder="Email" required>
-                    <input type="password" id="login-password" placeholder="Senha" required>
-                    <button type="submit" id="login-btn">Login</button>
-                </form>
-            </div>
-
-            <!-- Formulário de Cadastro -->
-            <div class="form" id="register-form" style="display: none;">
-                <h2>Cadastro</h2>
-                <form id="register-form" method="POST">
-                    <input type="email" id="register-email" placeholder="Email" required>
-                    <input type="password" id="register-password" placeholder="Senha" required>
-                    <button type="submit" id="register-btn">Cadastrar</button>
-                </form>
-            </div>
-
-            <div class="actions">
-                <button id="switch-to-register">Cadastrar-se</button>
-                <button id="switch-to-login">Já tem conta? Faça login</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/backendless@6.2.0/dist/backendless.min.js"></script>
-    <script>
-        // Inicialização do Backendless
-        Backendless.initApp('22AF0CE2-C3D0-4CBD-8544-50826D808F56', '61C085A9-8E89-4B00-9FEF-14B06A29DF75);
-
-        // Mudar entre os formulários de login e cadastro
-        document.getElementById('switch-to-register').addEventListener('click', () => {
-            document.getElementById('login-form').style.display = 'none';
-            document.getElementById('register-form').style.display = 'block';
-        });
-
-        document.getElementById('switch-to-login').addEventListener('click', () => {
-            document.getElementById('login-form').style.display = 'block';
-            document.getElementById('register-form').style.display = 'none';
-        });
-
-        // Cadastro de administrador
-        document.getElementById('register-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('register-email').value;
-            const password = document.getElementById('register-password').value;
-
-            // Verifica se o email e senha foram fornecidos
-            if (!email || !password) {
-                alert("Por favor, preencha todos os campos.");
-                return;
-            }
-
-            Backendless.UserService.register(email, password)
-                .then(user => {
-                    alert('Cadastro bem-sucedido! Faça login.');
-                    document.getElementById('register-form').reset();
-                    document.getElementById('login-form').style.display = 'block';
-                    document.getElementById('register-form').style.display = 'none';
-                })
-                .catch(error => {
-                    alert('Erro no cadastro: ' + error.message);
-                });
-        });
-
-        // Login do administrador
-        document.getElementById('login-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('login-email').value;
-            const password = document.getElementById('login-password').value;
-
-            // Verifica se o email e senha foram fornecidos
-            if (!email || !password) {
-                alert("Por favor, preencha todos os campos.");
-                return;
-            }
-
-            Backendless.UserService.login(email, password, true)
-                .then(user => {
-                    alert('Login bem-sucedido!');
-                    window.location.href = "admin_dashboard.html"; // Redireciona para a página inicial do administrador
-                })
-                .catch(error => {
-                    alert('Erro no login: ' + error.message);
-                });
-        });
-    </script>
+  <div class="container">
+    <form id="form-login">
+      <h2>Login</h2>
+      <input type="email" id="email-login" placeholder="Email">
+      <input type="password" id="senha-login" placeholder="Senha">
+      <button type="submit">Entrar</button>
+    </form>
+    <form id="form-cadastro">
+      <h2>Cadastro</h2>
+      <input type="email" id="email-cadastro" placeholder="Email">
+      <input type="password" id="senha-cadastro" placeholder="Senha">
+      <button type="submit">Cadastrar</se>
+    </form>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
