@@ -3,153 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vestibular 2025</title>
+    <title>Informações do Vestibular</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Estilos gerais */
         body {
             font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
         }
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #4e2a84;
-            padding: 15px;
-        }
-
-        .logo {
-            height: 50px;
-        }
-
-        .menu a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .content {
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
             text-align: center;
-            padding: 20px;
         }
-
         h1 {
-            color: #333;
-            font-size: 2em;
-            margin-bottom: 20px;
+            margin: 0;
         }
 
-        .info {
-            background-color: #eee;
+        /* Slider */
+        .slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        /* Cronograma */
+        .cronograma {
             padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            text-align: left;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #e3f2fd;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .cronograma table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .cronograma th, .cronograma td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .cronograma th {
+            background-color: #0056b3;
+            color: white;
         }
 
-        .info p {
-            font-size: 1em;
-            margin: 10px 0;
-        }
-
-        .buttons {
+        /* Links */
+        .links {
             display: flex;
             flex-wrap: wrap;
+            gap: 15px;
             justify-content: center;
-            margin: 20px 0;
+            padding: 20px;
         }
-
-        .buttons a {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #4e2a84;
-            color: #fff;
+        .links a {
+            display: block;
+            padding: 15px;
+            background-color: #0056b3;
+            color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .links a:hover {
+            background-color: #003f8c;
         }
 
-        .download {
-            margin: 20px 0;
+        /* Área de arquivos */
+        .arquivos {
+            padding: 20px;
+            background-color: #f5f5f5;
+            margin: 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
         }
-
-        .download a {
-            color: red;
+        .arquivos ul {
+            list-style: none;
+            padding: 0;
+        }
+        .arquivos li {
+            margin-bottom: 10px;
+        }
+        .arquivos li a {
+            color: #0056b3;
             text-decoration: none;
         }
-
-        .info-email {
-            margin-top: 30px;
-            color: #333;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
+        .arquivos li a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <img src="logo.png" alt="Logo UEPG" class="logo">
-        <div class="menu">
-            <a href="#">Início</a>
-            <a href="#">Portal do Candidato</a>
-            <a href="#">Vestibular</a>
-            <a href="#">PSS</a>
-            <a href="#">EAD</a>
-            <a href="#">Outros Concursos</a>
-            <a href="#">Documentos</a>
-            <a href="#">Serviços</a>
-            <a href="#">Protocolo Digital</a>
-        </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Informações do Vestibular</h1>
     </header>
-    
-    <main class="content">
-        <h1>VESTIBULAR 2025</h1>
-        <section class="info">
-            <p><strong>Período de inscrição:</strong> 01/09/2024 a 30/09/2024</p>
-            <p><strong>Pagamento da taxa de inscrição:</strong> até 07/10/2024</p>
-            <p><strong>Taxa de inscrição:</strong> R$ 204,00</p>
-            <p>*Cursos de Licenciatura são isentos de taxa de inscrição.</p>
-            <p><strong>Divulgação do ensalamento:</strong> a partir de 08/11/2024</p>
-            <p><strong>Divulgação dos resultados (1ª chamada):</strong> até 20/12/2024</p>
-        </section>
-        
-        <div class="buttons">
-            <a href="#">Sobre o Vestibular</a>
-            <a href="#">Manual do Candidato</a>
-            <a href="#">Minha Inscrição</a>
-            <a href="#">Concorrência</a>
-            <a href="#">Bancas Heteroidentificação/PCD</a>
-            <a href="#">Informações sobre Matrícula</a>
-            <a href="#">Legislação</a>
-            <a href="#">Contato</a>
-        </div>
-        
-        <div class="download">
-            <a href="arquivo.pdf" download>Vestibular ISCM 2025 - Fechado</a>
-        </div>
-        
-        <p class="info-email">DESEJA RECEBER INFORMAÇÕES POR EMAIL?</p>
-    </main>
-    
-    <footer class="footer">
-        <p>&copy;2024 COMVEST | Designed by COMVEST</p>
-    </footer>
+
+    <!-- Slider de Imagens via URL -->
+    <div class="slider">
+        <img src="https://via.placeholder.com/800x300?text=Imagem+1" alt="Imagem 1">
+    </div>
+
+    <!-- Links para Informações do Vestibular -->
+    <section class="links">
+        <a href="#inscricoes">Inscrições</a>
+        <a href="#datas-prova">Datas das Provas</a>
+        <a href="#locais-prova">Locais de Prova</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#matriculas">Matrículas</a>
+    </section>
+
+    <!-- Cronograma Dinâmico -->
+    <section class="cronograma">
+        <h2>Cronograma do Vestibular</h2>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Atividade</th>
+            </tr>
+            <tr>
+                <td>01/12</td>
+                <td>Abertura das Inscrições</td>
+            </tr>
+            <tr>
+                <td>15/01</td>
+                <td>Encerramento das Inscrições</td>
+            </tr>
+            <tr>
+                <td>30/01</td>
+                <td>Divulgação dos Locais de Prova</td>
+            </tr>
+            <tr>
+                <td>10/02</td>
+                <td>Data da Prova</td>
+            </tr>
+            <tr>
+                <td>25/02</td>
+                <td>Divulgação dos Resultados</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Área para Arquivos do Vestibular -->
+    <section class="arquivos">
+        <h2>Arquivos do Vestibular</h2>
+        <ul>
+            <li><a href="documentos/manual-candidato.pdf" download>Manual do Candidato</a></li>
+            <li><a href="documentos/editais.pdf" download>Editais do Vestibular</a></li>
+            <li><a href="documentos/provas-anteriores.pdf" download>Provas Anteriores</a></li>
+        </ul>
+    </section>
+
 </body>
 </html>
